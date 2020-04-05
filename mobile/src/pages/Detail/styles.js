@@ -29,10 +29,11 @@ export default StyleSheet.create({
         fontSize: 14,
         color: '#41414d',
         fontWeight: 'bold',
-        marginBottom: 24,
+        marginBottom: 0,
     },
     incidentValue: {
-        marginTop: 8,
+        marginTop: 5,
+        marginBottom:15,
         fontSize: 15,
 
         color: '#737380'

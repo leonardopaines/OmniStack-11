@@ -18,7 +18,7 @@ export default function Detail() {
         navigation.goBack();
     }
 
-    const message = `Olá ${incident.name}, estou entrando em contato posi gostaria de ajudar no caso "${incident.title} com o valor de ${Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(incident.value)}".`;
+    const message = `Olá ${incident.name}, estou entrando em contato pois gostaria de ajudar no caso "${incident.title}" com o valor de ${incident.value}`;//Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(incident.value)}".`;
 
     function sendMail() {
         MailComposer.composeAsync({
@@ -49,15 +49,15 @@ export default function Detail() {
                 <Text style={styles.incidentValue}>{incident.title}</Text>
 
                 <Text style={styles.incidentProperty}>VALOR:</Text>
-                <Text style={styles.incidentValue}>
-                    {Intl.NumberFormat(
+                <Text style={styles.incidentValue}>{incident.value}
+                    {/* {Intl.NumberFormat(
                         'pt-BR',
                         {
                             style: 'currency',
                             currency: 'BRL'
                         })
                         .format(incident.value)
-                    }
+                    } */}
                 </Text>
             </View>
 

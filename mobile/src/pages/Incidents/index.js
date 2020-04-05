@@ -16,7 +16,7 @@ export default function Incidents() {
     const navigation = useNavigation();
 
     function navigateToDetail(incident) {
-        navigation.navigate('Detail', incident);
+        navigation.navigate('Detail', { incident });
     };
 
     async function loadIncidents() {
@@ -57,8 +57,9 @@ export default function Incidents() {
             <FlatList
                 style={styles.incidentList}
                 data={incidents}
-                keyExtractor={incident => String(incidents.id)}
-                showsVerticalScrollIndicator={false}
+                keyExtractor={incident => String(incident.id)}
+                disableIntervalMomentum={false}
+                horizontal={true}
                 onEndReached={loadIncidents}
                 onEndReachedThreshold={0.2}
                 renderItem={({ item: incident }) => (
@@ -70,15 +71,15 @@ export default function Incidents() {
                         <Text style={styles.incidentValue}>{incident.title}</Text>
 
                         <Text style={styles.incidentProperty}>VALOR:</Text>
-                        <Text style={styles.incidentValue}>
-                            {Intl.NumberFormat(
+                        <Text style={styles.incidentValue}>{incident.value}
+                            {/* {Intl.NumberFormat(
                                 'pt-BR',
                                 {
                                     style: 'currency',
                                     currency: 'BRL'
                                 })
                                 .format(incident.value)
-                            }
+                            } */}
                         </Text>
 
                         <TouchableOpacity

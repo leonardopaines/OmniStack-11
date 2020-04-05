@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Dimensions } from 'react-native';
 import Constants from 'expo-constants';
 
 export default StyleSheet.create({
@@ -37,8 +37,10 @@ export default StyleSheet.create({
     incident: {
         padding: 24,
         borderRadius: 8,
+        width: Math.round(Dimensions.get('window').width) - 50,
         backgroundColor: '#FFF',
-        marginBottom: 16,
+        marginLeft:0,
+        margin: 10
     },
     incidentProperty: {
         fontSize: 14,
